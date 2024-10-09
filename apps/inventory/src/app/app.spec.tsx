@@ -1,7 +1,8 @@
 import { render } from '@testing-library/react';
 
-import App from './app';
 import { BrowserRouter } from 'react-router-dom';
+
+import App from './app';
 
 describe('App', () => {
   it('should render successfully', () => {
@@ -19,6 +20,6 @@ describe('App', () => {
         <App />
       </BrowserRouter>
     );
-    expect(getByText(/Welcome react-store/gi)).toBeTruthy();
+    expect(getByText(/Welcome inventory/gi)).toBeTruthy();
   });
 });
