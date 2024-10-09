@@ -20,6 +20,7 @@ export default defineConfig({
   // worker: {
   //  plugins: [ nxViteTsPaths() ],
   // },
+  base: '/NXMonorepo',
   build: {
     outDir: './build/react-store',
     emptyOutDir: true,
@@ -27,5 +28,14 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    rollupOptions: {
+      output: {
+        assetFileNames: (chunkInfo) => {
+            return 'assets/[name]-[hash].[ext]'
+        },
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js'
+      }
+    }
   },
 });

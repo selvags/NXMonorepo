@@ -1,23 +1,23 @@
 import { render } from '@testing-library/react';
 
 import App from './app';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 
 describe('App', () => {
   it('should render successfully', () => {
     const { baseElement } = render(
-      <BrowserRouter>
+      <MemoryRouter initialEntries={['/NXMonorepo']}>
         <App />
-      </BrowserRouter>
+      </MemoryRouter>
     );
     expect(baseElement).toBeTruthy();
   });
 
   it('should have a greeting as the title', () => {
     const { getByText } = render(
-      <BrowserRouter>
+      <MemoryRouter initialEntries={['/NXMonorepo']}>
         <App />
-      </BrowserRouter>
+      </MemoryRouter>
     );
     expect(getByText(/Welcome react-store/gi)).toBeTruthy();
   });
