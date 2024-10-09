@@ -1,24 +1,24 @@
 import { render } from '@testing-library/react';
 
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 
 import App from './app';
 
 describe('App', () => {
   it('should render successfully', () => {
     const { baseElement } = render(
-      <BrowserRouter>
+      <MemoryRouter initialEntries={['/NXMonorepo']}>
         <App />
-      </BrowserRouter>
+      </MemoryRouter>
     );
     expect(baseElement).toBeTruthy();
   });
 
   it('should have a greeting as the title', () => {
     const { getByText } = render(
-      <BrowserRouter>
+      <MemoryRouter initialEntries={['/NXMonorepo']}>
         <App />
-      </BrowserRouter>
+      </MemoryRouter>
     );
     expect(getByText(/Welcome inventory/gi)).toBeTruthy();
   });
