@@ -1,7 +1,7 @@
 import { getGreeting } from '../support/app.po';
 
 describe('react-store-e2e', () => {
-  beforeEach(() => cy.visit('/'));
+  beforeEach(() => cy.visit('/NXMonorepo'));
 
   it('should display welcome message', () => {
     // Custom command example, see `../support/commands.ts` file
